@@ -1,14 +1,33 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
+      <!-- 维护弹窗开关：true=开启 false=关闭 -->
+  <script>const enableMaintenance = false;</script>
+  <style>
+    .maintenance-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:"Microsoft YaHei",sans-serif;}
+    .maintenance-box{text-align:center;padding:40px 20px;background:#fff;border-radius:16px;max-width:500px;width:90%;box-shadow:0 8px 30px rgba(0,0,0,0.2);}
+    .maintenance-icon{font-size:60px;margin-bottom:20px;}
+    .maintenance-box h1{font-size:26px;margin-bottom:15px;color:#2c3e50;}
+    .maintenance-tip{font-size:16px;color:#7f8c8d;line-height:1.8;margin-bottom:20px;}
+    .maintenance-notice{font-size:14px;color:#e74c3c;}
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded',()=>{
+      if(enableMaintenance){
+        const maintenanceHTML=`<div class="maintenance-overlay"><div class="maintenance-box"><div class="maintenance-icon">🚧</div><h1>系统正在维护中</h1><p class="maintenance-tip">服务器正在进行例行维护升级，网站暂时无法访问。<br>我们正在加急处理，将尽快恢复服务
+        </p><p class="maintenance-notice">您可以稍后再尝试访问，感谢您的耐心等待。</p></div></div>`;
+        document.body.insertAdjacentHTML('afterbegin',maintenanceHTML);
+      }
+    });
+  </script>
     <meta charset="UTF-8" />
     <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="https://blog.fmcoral.com/favicon.ico" />
-    <link rel="apple-touch-icon" href="/images/logo/apple-touch-icon.png" />
-    <link rel="bookmark" href="/images/logo/apple-touch-icon.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="200x200" href="/images/logo/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="https://blog.fmcoral.com/favicon.ico" />
+    <link rel="bookmark" href="https://blog.fmcoral.com/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="200x200" href="https://blog.fmcoral.com/favicon.ico" />
     <meta name="description" content="Rmb Myself" />
     <meta name="keywords" content="个人主页" />
     <meta name="author" content="FmCoral" />
@@ -25,8 +44,8 @@
           'https://support.dmeng.net/upgrade-your-browser.html?referrer=' +
           encodeURIComponent(window.location.href);
     </script>
-    <script type="module" crossorigin src="/assets/index-5c87b966.js"></script>
-    <link rel="stylesheet" href="/assets/index-969a645a.css">
+    <script type="module" crossorigin src="/assets/index-7498424a.js"></script>
+    <link rel="stylesheet" href="/assets/index-adf4323c.css">
   <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
 
   <body>
